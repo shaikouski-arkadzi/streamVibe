@@ -68,3 +68,8 @@
   outline-offset: 4px;
   transition-duration: 0s !important;
 }
+
+@mixin disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
