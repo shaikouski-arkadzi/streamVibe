@@ -44,3 +44,8 @@
   top: 50%;
   translate: 0 -50%;
 }
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
