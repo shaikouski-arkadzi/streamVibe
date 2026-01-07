@@ -1,3 +1,4 @@
+import cn from "classnames"
 import Logo from "@/components"
 import "./Header.scss"
 
@@ -20,7 +21,7 @@ const menuItems = [
   },
 ]
 
-const Header = () => {
+const Header = ({ url }) => {
   return (
     <header className="header">
       <div className="header__inner container">
@@ -29,7 +30,12 @@ const Header = () => {
           <ul className="header__menu-list">
             {menuItems.map(({ label, href }) => (
               <li className="header__menu-item" key={label}>
-                <a href={href} className="header__menu-link">
+                <a
+                  href={href}
+                  className={cn("header__menu-link", {
+                    "is-active": href === url,
+                  })}
+                >
                   {label}
                 </a>
               </li>
