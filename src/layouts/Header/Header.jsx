@@ -1,5 +1,5 @@
 import cn from "classnames"
-import Logo from "@/components"
+import Logo from "@/components/Logo"
 import "./Header.scss"
 
 const menuItems = [
