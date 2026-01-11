@@ -11,6 +11,10 @@ const Button = ({
   isLabelHidden = false,
   iconName,
   /**
+   * '' (default) | 'transparent'
+   */
+  mode = "",
+  /**
    * 'before' | 'after'
    */
   iconPosition = "before",
@@ -27,7 +31,9 @@ const Button = ({
 
   return (
     <Component
-      className={cn(className, "button")}
+      className={cn(className, "button", {
+        [`button--${mode}`]: mode,
+      })}
       aria-label={title}
       title={title}
       {...specificProps}
