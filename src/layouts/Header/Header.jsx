@@ -1,7 +1,7 @@
 import cn from "classnames"
 import Logo from "@/components/Logo"
-import "./Header.scss"
 import Button from "@/components/Button"
+import "./Header.scss"
 
 const menuItems = [
   {
@@ -47,14 +47,14 @@ const Header = ({ url }) => {
           <Button
             className="header__button"
             label="Search"
-            isLabelHidden
+            isLabelVisible
             iconName="search"
             mode="transparent"
           />
           <Button
             className="header__button"
             label="Notifications"
-            isLabelHidden
+            isLabelVisible
             iconName="notification"
             mode="transparent"
           />

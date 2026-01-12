@@ -8,7 +8,7 @@ const Button = ({
   target,
   className,
   label,
-  isLabelHidden = false,
+  isLabelVisible = false,
   iconName,
   /**
    * '' (default) | 'transparent'
@@ -24,7 +24,7 @@ const Button = ({
   const linkProps = { href, target }
   const buttonProps = { type }
   const specificProps = isLink ? linkProps : buttonProps
-  const title = isLabelHidden ? label : undefined
+  const title = isLabelVisible ? label : undefined
   const iconComponent = iconName && (
     <Icon className="button__icon" name={iconName} />
   )
@@ -39,7 +39,7 @@ const Button = ({
       {...specificProps}
     >
       {iconPosition === "before" && iconComponent}
-      {!isLabelHidden && <span className="button__label">{label}</span>}
+      {!isLabelVisible && <span className="button__label">{label}</span>}
       {iconPosition === "after" && iconComponent}
     </Component>
   )
