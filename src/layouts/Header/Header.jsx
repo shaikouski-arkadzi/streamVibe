@@ -49,12 +49,14 @@ const Header = ({ url }) => {
             label="Search"
             isLabelHidden
             iconName="search"
+            mode="transparent"
           />
           <Button
             className="header__button"
             label="Notifications"
             isLabelHidden
             iconName="notification"
+            mode="transparent"
           />
         </div>
       </div>
