@@ -25,6 +25,12 @@
     column-gap: 16px;
   }
 
+  &__overlay-menu-dialog {
+    @include tablet-above {
+      display: contents;
+    }
+  }
+
   &__menu {
     padding: fluid-to-laptop(10, 8);
     background-color: var(--color-black-06);
