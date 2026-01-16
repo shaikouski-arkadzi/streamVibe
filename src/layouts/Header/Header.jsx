@@ -65,7 +65,12 @@ const Header = ({ url }) => {
             />
           </div>
         </dialog>
-        <BurgerButton className="header__burger-button visible-tablet" />
+        <BurgerButton
+          className="header__burger-button visible-tablet"
+          extraAttrs={{
+            "data-js-overlay-menu-burger-button": "",
+          }}
+        />
       </div>
     </header>
   )

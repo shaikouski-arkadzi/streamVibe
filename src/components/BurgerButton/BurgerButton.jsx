@@ -1,7 +1,7 @@
 import cn from "classnames"
 import "./BurgerButton.scss"
 
-const BurgerButton = ({ className }) => {
+const BurgerButton = ({ className, extraAttrs }) => {
   const title = "Open menu"
 
   return (
@@ -10,6 +10,7 @@ const BurgerButton = ({ className }) => {
       type="button"
       aria-label={title}
       title={title}
+      {...extraAttrs}
     >
       <svg
         className="burger-button__svg"
