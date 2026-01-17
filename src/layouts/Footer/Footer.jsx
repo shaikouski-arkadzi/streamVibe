@@ -50,6 +50,17 @@ const Footer = () => {
               <a href="/" className="footer__menu-title h6">
                 {title}
               </a>
+              {links?.length > 0 && (
+                <ul className="footer__menu-list">
+                  {links.map((link, index) => (
+                    <li className="footer__menu-item" key={link}>
+                      <a href="/" className="footer__menu-link">
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </nav>
