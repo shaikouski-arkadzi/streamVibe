@@ -1,3 +1,21 @@
 .footer {
   background-color: var(--color-black-06);
+
+  &__menu {
+    --footerMenuColumns: 6;
+
+    display: grid;
+    grid-template-columns: repeat(var(--footerMenuColumns), 1fr);
+    gap: 30px fluid(30, 10);
+    padding-block: fluid(100, 50);
+    border-bottom: var(--border);
+
+    @include labtop {
+      --footerMenuColumns: 3;
+    }
+
+    @include mobile {
+      --footerMenuColumns: 2;
+    }
+  }
 }
