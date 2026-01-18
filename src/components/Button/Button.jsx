@@ -11,7 +11,7 @@ const Button = ({
   isLabelVisible = false,
   iconName,
   /**
-   * '' (default) | 'transparent'
+   * '' (default) | 'transparent' | 'black-10'
    */
   mode = "",
   /**
