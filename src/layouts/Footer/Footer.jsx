@@ -1,3 +1,4 @@
+import Socials from "@/components/Socials"
 import "./Footer.scss"
 
 const menuItems = [
@@ -60,6 +61,9 @@ const Footer = () => {
                     </li>
                   ))}
                 </ul>
+              )}
+              {socialLinks?.length > 0 && (
+                <Socials className="footer__soc1als" links={socialLinks} />
               )}
             </div>
           ))}
