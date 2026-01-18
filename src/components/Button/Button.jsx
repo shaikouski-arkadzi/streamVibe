@@ -1,6 +1,6 @@
 import cn from "classnames"
-import "./Button.scss"
 import Icon from "@/components/Icon"
+import "./Button.scss"
 
 const Button = ({
   href,
@@ -18,6 +18,7 @@ const Button = ({
    * 'before' | 'after'
    */
   iconPosition = "before",
+  hasFillIcon,
 }) => {
   const isLink = href !== undefined
   const Component = isLink ? "a" : "button"
@@ -26,7 +27,7 @@ const Button = ({
   const specificProps = isLink ? linkProps : buttonProps
   const title = isLabelVisible ? label : undefined
   const iconComponent = iconName && (
-    <Icon className="button__icon" name={iconName} />
+    <Icon className="button__icon" name={iconName} hasFill={hasFillIcon} />
   )
 
   return (
