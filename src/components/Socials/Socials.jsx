@@ -16,6 +16,7 @@ const Socials = ({ className, links = [] }) => {
               label={label}
               isLabelVisible
               iconName={iconName}
+              hasFillIcon
             />
           </li>
         ))}

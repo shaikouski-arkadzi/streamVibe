@@ -44,7 +44,7 @@ const menuItems = [
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer__inner containter">
+      <div className="footer__inner container">
         <nav className="footer__menu">
           {menuItems.map(({ title, links, socialLinks }) => (
             <div className="footer__menu-column" key={title}>
