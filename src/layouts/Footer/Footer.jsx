@@ -68,7 +68,11 @@ const Footer = () => {
             </div>
           ))}
         </nav>
-        <div className="footer__extra"> </div>
+        <div className="footer__extra">
+          <p className="footer__copyright">
+            @<time dateTime="2026">2026</time> streamvib, All Rights Reserved
+          </p>
+        </div>
       </div>
     </footer>
   )
