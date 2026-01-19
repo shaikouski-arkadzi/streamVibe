@@ -41,6 +41,8 @@ const menuItems = [
   },
 ]
 
+const extraLinks = ["Terms of Use", "Privacy Policy", "Cookie Policy"]
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -72,6 +74,13 @@ const Footer = () => {
           <p className="footer__copyright">
             @<time dateTime="2026">2026</time> streamvib, All Rights Reserved
           </p>
+          <div className="footer__extra-links">
+            {extraLinks.map((link) => (
+              <a className="footer__extra-link" href="/" key={link}>
+                {link}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
