@@ -9,9 +9,31 @@
   }
 
   &__pano {
+    --heroGradientColorStart: var(--color-black-08);
+    --heroGradientColorEnd: #14141400;
+
+    --heroGradientHeight: 67.5%;
+
+    --heroGradientTop: linear-gradient(
+        to bottom,
+        var(--heroGradientColorStart) 0%,
+        var(--heroGradientColorEnd) 100%
+      )
+      50% 0/100% var(--heroGradientHeight);
+
+    --heroGradientBottom: linear-gradient(
+        to top,
+        var(--heroGradientColorStart) 0%,
+        var(--heroGradientColorEnd) 100%
+      )
+      50% 100%/100% var(--heroGradientHeight);
+
     @include flex-center;
 
     flex-grow: 1;
+    background: var(--heroGradientTop), var(--heroGradientBottom),
+      url("../../assets/images/hero/bg.png") 50% / cover;
+    background-repeat: no-repeat;
   }
 
   &__play-button {
