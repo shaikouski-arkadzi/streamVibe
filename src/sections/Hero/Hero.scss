@@ -27,7 +27,7 @@
         var(--heroGradientColorStart) 0%,
         var(--heroGradientColorEnd) 100%
       )
-      50% 100%/100% var(--heroGradientHeight);
+      50% 101%/100% var(--heroGradientHeight);
 
     @include flex-center;
 
