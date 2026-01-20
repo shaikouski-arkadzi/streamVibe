@@ -4,7 +4,7 @@ import Content from "@/layouts/Content"
 import Footer from "@/layouts/Footer"
 import "@/styles"
 
-export default function ({ children, title, url }) {
+export default function ({ children, title, url, isHeaderFixed }) {
   return (
     <>
       <Head htmlAttributes={{ lang: "en" }}>
@@ -29,7 +29,7 @@ export default function ({ children, title, url }) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <Header url={url} />
+      <Header url={url} isFixed={isHeaderFixed} />
       <Content>{children}</Content>
       <Footer />
     </>

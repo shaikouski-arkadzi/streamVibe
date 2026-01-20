@@ -23,9 +23,14 @@ const menuItems = [
   },
 ]
 
-const Header = ({ url }) => {
+const Header = ({ url, isFixed }) => {
   return (
-    <header className="header" data-js-overlay-menu="">
+    <header
+      className={cn("header", {
+        "is-fixed": isFixed,
+      })}
+      data-js-overlay-menu=""
+    >
       <div className="header__inner container">
         <Logo />
         <dialog
