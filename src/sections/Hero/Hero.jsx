@@ -25,8 +25,8 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <div className="hero-body">
-        <div className="hero-body-inner container">
+      <div className="hero__body">
+        <div className="hero__body-inner container">
           <h1 className="hero__title" id={titleId}>
             The Best Streaming Experience
           </h1>
