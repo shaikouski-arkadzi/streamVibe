@@ -43,4 +43,13 @@
     background-color: transparent;
     border: none;
   }
+
+  &__title {
+    margin-top: -0.5em;
+    margin-bottom: fluid-to-laptop(14, 10);
+  }
+
+  &__description {
+    margin-bottom: fluid(50, 30);
+  }
 }
