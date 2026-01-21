@@ -7,6 +7,7 @@ const Section = ({
   titleId,
   description,
   actions,
+  isActionsHiddenOnMobile = false,
   children,
 }) => {
   return (
@@ -25,7 +26,15 @@ const Section = ({
             </div>
           )}
         </div>
-        {actions && <div className="section__actions">{actions}</div>}
+        {actions && (
+          <div
+            className={cn("section__actions", {
+              "hidden-mobile": isActionsHiddenOnMobile,
+            })}
+          >
+            {actions}
+          </div>
+        )}
       </header>
       <div className="section__body">{children}</div>
     </section>
