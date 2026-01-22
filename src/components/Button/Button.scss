@@ -11,7 +11,7 @@
   user-select: none;
   cursor: pointer;
 
-  @include labtop {
+  @include laptop {
     border-radius: var(--border-radius-xs);
   }
 

@@ -10,7 +10,7 @@
     padding-block: fluid(100, 50);
     border-bottom: var(--border);
 
-    @include labtop {
+    @include laptop {
       --footerMenuColumns: 3;
     }
 

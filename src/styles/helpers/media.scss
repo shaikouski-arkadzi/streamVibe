@@ -3,13 +3,13 @@ $tablet: 1023px;
 $mobile: 767px;
 $mobile-s: 480px;
 
-@mixin labtop-above {
+@mixin laptop-above {
   @media (width > $laptop) {
     @content;
   }
 }
 
-@mixin labtop {
+@mixin laptop {
   @media (width <= $laptop) {
     @content;
   }

@@ -68,7 +68,7 @@
   &__menu {
     border-radius: var(--border-radius-l);
 
-    @include labtop {
+    @include laptop {
       border-radius: var(--border-radius-m);
     }
 
