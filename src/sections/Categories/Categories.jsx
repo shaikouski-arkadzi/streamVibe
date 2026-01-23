@@ -1,5 +1,54 @@
 import Section from "@/layouts/Section"
+import CategoryCard from "@/components/CategoryCard"
 import "./Categories.scss"
+
+const categoryItems = [
+  {
+    title: "Action",
+    images: [
+      "/src/assets/images/categories/action/1.jpg",
+      "/src/assets/images/categories/action/2.jpg",
+      "/src/assets/images/categories/action/3.jpg",
+      "/src/assets/images/categories/action/4.jpg",
+    ],
+  },
+  {
+    title: "Adventure",
+    images: [
+      "/src/assets/images/categories/action/1.jpg",
+      "/src/assets/images/categories/action/2.jpg",
+      "/src/assets/images/categories/action/3.jpg",
+      "/src/assets/images/categories/action/4.jpg",
+    ],
+  },
+  {
+    title: "Comedy",
+    images: [
+      "/src/assets/images/categories/action/1.jpg",
+      "/src/assets/images/categories/action/2.jpg",
+      "/src/assets/images/categories/action/3.jpg",
+      "/src/assets/images/categories/action/4.jpg",
+    ],
+  },
+  {
+    title: "Drama",
+    images: [
+      "/src/assets/images/categories/action/1.jpg",
+      "/src/assets/images/categories/action/2.jpg",
+      "/src/assets/images/categories/action/3.jpg",
+      "/src/assets/images/categories/action/4.jpg",
+    ],
+  },
+  {
+    title: "Horror",
+    images: [
+      "/src/assets/images/categories/action/1.jpg",
+      "/src/assets/images/categories/action/2.jpg",
+      "/src/assets/images/categories/action/3.jpg",
+      "/src/assets/images/categories/action/4.jpg",
+    ],
+  },
+]
 
 const Categories = () => {
   return (
@@ -14,7 +63,11 @@ const Categories = () => {
         </div>
       }
       isActionsHiddenOnMobile
-    ></Section>
+    >
+      {categoryItems.map((categoryItem) => (
+        <CategoryCard {...categoryItem} key={categoryItem.title} />
+      ))}
+    </Section>
   )
 }
 
