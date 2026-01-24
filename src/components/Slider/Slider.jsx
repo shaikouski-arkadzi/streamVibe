@@ -1,7 +1,8 @@
+import SliderNavigation from "@/components/SliderNavigation"
 import "swiper/css"
 import "./Slider.scss"
 
-const Slider = ({ children }) => {
+const Slider = ({ children, navigationTargetElementId = null }) => {
   return (
     <div className="slider">
       <div className="slider__swiper swiper">
@@ -13,6 +14,9 @@ const Slider = ({ children }) => {
           ))}
         </ul>
       </div>
+      {!navigationTargetElementId && (
+        <SliderNavigation className="slider__navigation" />
+      )}
     </div>
   )
 }
