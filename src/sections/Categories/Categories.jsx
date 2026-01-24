@@ -1,5 +1,6 @@
 import Section from "@/layouts/Section"
 import CategoryCard from "@/components/CategoryCard"
+import Slider from "@/components/Slider"
 import "./Categories.scss"
 
 const categoryItems = [
@@ -64,9 +65,11 @@ const Categories = () => {
       }
       isActionsHiddenOnMobile
     >
-      {categoryItems.map((categoryItem) => (
-        <CategoryCard {...categoryItem} key={categoryItem.title} />
-      ))}
+      <Slider>
+        {categoryItems.map((categoryItem) => (
+          <CategoryCard {...categoryItem} key={categoryItem.title} />
+        ))}
+      </Slider>
     </Section>
   )
 }
