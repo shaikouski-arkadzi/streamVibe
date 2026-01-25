@@ -1,3 +1,5 @@
+import getParams from "@/utils/getParams"
+
 const rootSelector = "[data-js-slider]"
 
 class Slider {
@@ -12,6 +14,8 @@ class Slider {
 
   constructor(rootElement) {
     this.rootElement = rootElement
+    this.swiperElement = this.rootElement.querySelector(this.selectors.swiper)
+    this.params = getParams(this.rootElement, this.selectors.root)
   }
 }
 
