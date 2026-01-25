@@ -19,6 +19,7 @@ const Button = ({
    */
   iconPosition = "before",
   hasFillIcon,
+  extraAttrs,
 }) => {
   const isLink = href !== undefined
   const Component = isLink ? "a" : "button"
@@ -38,6 +39,7 @@ const Button = ({
       aria-label={title}
       title={title}
       {...specificProps}
+      {...extraAttrs}
     >
       {iconPosition === "before" && iconComponent}
       {!isLabelVisible && <span className="button__label">{label}</span>}
