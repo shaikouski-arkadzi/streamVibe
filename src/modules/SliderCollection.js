@@ -19,6 +19,17 @@ class Slider {
     this.navigationElement = this.params.navigationTargetElementId
       ? document.getElementById(this.params.navigationTargetElementId)
       : this.rootElement.querySelector(this.selectors.navigation)
+    this.previousButtonElement = this.navigationElement.querySelector(
+      this.selectors.previousButton,
+    )
+    this.nextButtonElement = this.navigationElement.querySelector(
+      this.selectors.nextButton,
+    )
+    this.paginationElement = this.navigationElement.querySelector(
+      this.selectors.pagination,
+    )
+    this.init()
+  }
   }
 }
 
