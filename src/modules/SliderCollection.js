@@ -16,6 +16,9 @@ class Slider {
     this.rootElement = rootElement
     this.swiperElement = this.rootElement.querySelector(this.selectors.swiper)
     this.params = getParams(this.rootElement, this.selectors.root)
+    this.navigationElement = this.params.navigationTargetElementId
+      ? document.getElementById(this.params.navigationTargetElementId)
+      : this.rootElement.querySelector(this.selectors.navigation)
   }
 }
 
