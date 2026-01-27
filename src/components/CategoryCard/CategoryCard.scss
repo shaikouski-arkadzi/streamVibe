@@ -19,6 +19,10 @@
     border-color: currentColor;
   }
 
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+
   &__images {
     position: relative;
     display: grid;
