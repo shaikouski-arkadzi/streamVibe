@@ -1,3 +1,4 @@
+import cn from "classnames"
 import SliderNavigation from "@/components/SliderNavigation"
 import "swiper/css"
 import "./Slider.scss"
@@ -35,10 +36,13 @@ const Slider = ({
   children,
   navigationTargetElementId = null,
   sliderParams = defaultSliderParams,
+  isBeyondTheViewportOnMobileS,
 }) => {
   return (
     <div
-      className="slider"
+      className={cn("slider", {
+        "slider--beyond-the-viewport-on-mobile-s": isBeyondTheViewportOnMobileS,
+      })}
       data-js-slider={JSON.stringify({
         sliderParams,
         navigationTargetElementId,

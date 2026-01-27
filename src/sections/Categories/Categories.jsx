@@ -198,7 +198,10 @@ const Categories = () => {
       actions={<SliderNavigation mode="tile" id={sliderNavigationId} />}
       isActionsHiddenOnMobile
     >
-      <Slider navigationTargetElementId={sliderNavigationId}>
+      <Slider
+        navigationTargetElementId={sliderNavigationId}
+        isBeyondTheViewportOnMobileS
+      >
         {categoryItems.map((categoryItem) => (
           <CategoryCard {...categoryItem} key={categoryItem.title} />
         ))}
