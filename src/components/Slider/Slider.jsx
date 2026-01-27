@@ -37,6 +37,7 @@ const Slider = ({
   navigationTargetElementId = null,
   sliderParams = defaultSliderParams,
   isBeyondTheViewportOnMobileS,
+  hasScrollbar = true,
 }) => {
   return (
     <div
@@ -59,6 +60,12 @@ const Slider = ({
       </div>
       {!navigationTargetElementId && (
         <SliderNavigation className="slider__navigation" />
+      )}
+      {hasScrollbar && (
+        <div
+          className="slider__scrollbar visible-mobile"
+          data-js-slider-scrollbar=""
+        />
       )}
     </div>
   )
