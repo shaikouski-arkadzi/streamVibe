@@ -6,6 +6,29 @@ const defaultSliderParams = {
   slidesPerView: 5,
   slidesPerGroup: 5,
   spaceBetween: 30,
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+      spaceBetween: 20,
+    },
+    481: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      spaceBetween: 20,
+    },
+    1024: {
+      spaceBetween: 20,
+    },
+    1441: {
+      spaceBetween: 30,
+    },
+  },
 }
 
 const Slider = ({
