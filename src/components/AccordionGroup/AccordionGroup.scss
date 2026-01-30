@@ -4,10 +4,30 @@
     list-style: none;
 
     .accordion-group__item {
+      display: flex;
+      column-gap: fluid-to-laptop(20, 16);
       counter-increment: custom-counter;
 
       &::before {
+        @include flex-center;
+
+        font-size: fluid-to-laptop(20, 16);
+        font-weight: 600;
+        color: var(--color-white);
+        min-width: fluid(62, 42);
+        height: fluid(67, 46);
+        background-color: var(--color-black-12);
+        border: var(--border);
+        border-radius: var(--border-radius-m);
         content: counter(custom-counter, decimal-leading-zero);
+
+        @include laptop {
+          border-radius: var(--border-radius-s);
+        }
+
+        @include mobile {
+          border-radius: var(--border-radius-xs);
+        }
       }
     }
   }
