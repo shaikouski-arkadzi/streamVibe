@@ -8,7 +8,7 @@ const AccordionGroup = ({ columns = 1, children, isOrderedList = true }) => {
     <ListTag
       className={cn("accordion-group", {
         [`accordion-group--${columns}-columns`]: columns > 1,
-        "accordion-group-has-counter": isOrderedList,
+        "accordion-group--has-counter": isOrderedList,
       })}
     >
       {children.map((child, index) => (
