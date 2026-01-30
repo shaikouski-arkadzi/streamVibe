@@ -1,4 +1,17 @@
 .accordion-group {
+  &--has-counter {
+    counter-reset: custom-counter;
+    list-style: none;
+
+    .accordion-group__item {
+      counter-increment: custom-counter;
+
+      &::before {
+        content: counter(custom-counter, decimal-leading-zero);
+      }
+    }
+  }
+
   &__item {
     padding: fluid-to-laptop(34, 24);
 
