@@ -32,8 +32,14 @@
     }
   }
 
+  &--2-columns {
+    column-count: 2;
+    column-gap: fluid-to-laptop(80, 40);
+  }
+
   &__item {
     padding: fluid-to-laptop(34, 24);
+    break-inside: avoid-column;
 
     &:not(:last-child) {
       position: relative;
