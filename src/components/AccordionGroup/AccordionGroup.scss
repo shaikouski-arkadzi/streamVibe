@@ -41,6 +41,12 @@
     padding: fluid-to-laptop(34, 24);
     break-inside: avoid-column;
 
+    &--last-column-item {
+      &::after {
+        display: none;
+      }
+    }
+
     &:not(:last-child) {
       position: relative;
 
