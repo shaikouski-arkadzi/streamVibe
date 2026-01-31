@@ -33,17 +33,39 @@
   }
 
   &--2-columns {
-    column-count: 2;
     column-gap: fluid-to-laptop(80, 40);
+
+    @include tablet-above {
+      column-count: 2;
+    }
   }
 
   &__item {
     padding: fluid-to-laptop(34, 24);
     break-inside: avoid-column;
 
-    &--last-column-item {
-      &::after {
-        display: none;
+    @include tablet-above {
+      &--last-column-item {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    @include tablet {
+      --accordionGroupItemPaddingY: 40px;
+      --accordionGroupItemHalfPaddingY: calc(
+        var(--accordionGroupItemPaddingY) / 2
+      );
+
+      padding: var(--accordionGroupItemPaddingY) 0;
+
+      &:first-child {
+        padding-top: var(--accordionGroupItemHalfPaddingY);
+      }
+
+      &:last-child {
+        padding-bottom: var(--accordionGroupItemHalfPaddingY);
       }
     }
 
