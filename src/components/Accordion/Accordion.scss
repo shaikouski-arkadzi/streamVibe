@@ -30,6 +30,9 @@
 
   &__title {
     position: relative;
+    min-height: var(--accordionGroupCounterHeight);
+    display: flex;
+    align-items: center;
     padding-right: 50px;
     color: inherit;
     transition-duration: var(--transition-duration);
