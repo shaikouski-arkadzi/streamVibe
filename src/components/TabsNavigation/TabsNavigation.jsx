@@ -1,5 +1,4 @@
 import cn from "classnames"
-import Button from "@/components/Button"
 import getIdFromTitle from "@/utils/getIdFromTitle"
 import "./TabsNavigation.scss"
 
