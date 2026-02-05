@@ -1,4 +1,5 @@
 import cn from "classnames"
+import TabsNavigation from "@/components/TabsNavigation"
 import getIdFromTitle from "@/utils/getIdFromTitle"
 import "./Tabs.scss"
 
@@ -13,12 +14,15 @@ const Tabs = ({
       className={cn(className, "tabs")}
       data-js-tabs={JSON.stringify({ navigationTargetElementId })}
     >
-      {!navigationTargetElementId && <div>Tabs navigation</div>}
+      {!navigationTargetElementId && (
+        <TabsNavigation title={title} items={items} />
+      )}
       <div className="tabs__body">
         {items.map(({ title, children, isActive }) => {
           const titleFormated = getIdFromTitle(title)
           const buttonId = `${titleFormated}-tab`
           const contentId = `${titleFormated}-tabpanel`
+
           return (
             <div
               className={cn("tabs__content", {
