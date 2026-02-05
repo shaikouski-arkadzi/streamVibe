@@ -17,20 +17,28 @@ const TabsNavigation = ({ className, id, title, items = [] }) => {
       <h3 className="visually-hidden" id={titleId}>
         {title}
       </h3>
-      {items.map((item) => (
-        <div
-          className={cn("tabs-navigation__button", {
-            "is-active": item.isActive,
-          })}
-          role="tab"
-          aria-selected={item.isActive}
-          tabIndex={item.isActive ? 0 : -1}
-          data-js-tabs-button=""
-          key={item.title}
-        >
-          {item.title}
-        </div>
-      ))}
+      {items.map((item) => {
+        const titleFormated = getIdFromTitle(item.title)
+        const buttonId = `${titleFormated}-tab`
+        const contentId = `${titleFormated}-tabpanel`
+
+        return (
+          <div
+            className={cn("tabs-navigation__button", {
+              "is-active": item.isActive,
+            })}
+            id={buttonId}
+            aria-controls={contentId}
+            role="tab"
+            aria-selected={item.isActive}
+            tabIndex={item.isActive ? 0 : -1}
+            data-js-tabs-button=""
+            key={item.title}
+          >
+            {item.title}
+          </div>
+        )
+      })}
     </div>
   )
 }
