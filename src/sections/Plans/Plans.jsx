@@ -23,19 +23,21 @@ const Plans = () => {
         />
       }
     >
-      <Grid columns={3}>
-        {planGroups[0].items.map((planItem) => (
-          <PlanCard {...planItem} key={planItem.title} />
-        ))}
-      </Grid>
       <Tabs
         title={tabsTitle}
         navigationTargetElementId={tabsNavigationId}
         items={planGroups.map((planGroup) => ({
           title: planGroup.title,
           isActive: planGroup.isActive,
+          children: (
+            <Grid columns={3}>
+              {planGroup.items.map((planItem) => (
+                <PlanCard {...planItem} key={planItem.title} />
+              ))}
+            </Grid>
+          ),
         }))}
-      ></Tabs>
+      />
     </Section>
   )
 }
