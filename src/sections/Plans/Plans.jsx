@@ -2,6 +2,7 @@ import Section from "@/layouts/Section"
 import Grid from "@/components/Grid"
 import PlanCard from "@/components/PlanCard"
 import TabsNavigation from "@/components/TabsNavigation"
+import Tabs from "@/components/Tabs"
 import planGroups from "./planGroups"
 import "./Plans.scss"
 
@@ -27,6 +28,14 @@ const Plans = () => {
           <PlanCard {...planItem} key={planItem.title} />
         ))}
       </Grid>
+      <Tabs
+        title={tabsTitle}
+        navigationTargetElementId={tabsNavigationId}
+        items={planGroups.map((planGroup) => ({
+          title: planGroup.title,
+          isActive: planGroup.isActive,
+        }))}
+      ></Tabs>
     </Section>
   )
 }
