@@ -53,10 +53,25 @@ class Tabs {
     this.updateUI()
   }
 
+  onKeyDown = (event) => {
+    const { target } = event
+    const isTabsContentFocused = this.contentElements.some(
+      (contentElement) => contentElement === target,
+    )
+    const isTabsButtonFocused = this.buttonElements.some(
+      (buttonElement) => buttonElement === target,
+    )
+
+    if (!isTabsContentFocused && !isTabsButtonFocused) {
+      return
+    }
+  }
+
   bindEvents() {
     this.buttonElements.forEach((buttonElement, index) => {
       buttonElement.addEventListener("click", () => this.onButtonClick(index))
     })
+    document.addEventListener("keydown", this.onKeyDown)
   }
 }
 
