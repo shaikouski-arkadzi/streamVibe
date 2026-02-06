@@ -54,7 +54,7 @@ class Tabs {
   }
 
   onKeyDown = (event) => {
-    const { target } = event
+    const { target, code } = event
     const isTabsContentFocused = this.contentElements.some(
       (contentElement) => contentElement === target,
     )
@@ -65,6 +65,15 @@ class Tabs {
     if (!isTabsContentFocused && !isTabsButtonFocused) {
       return
     }
+
+    const action = {
+      ArrowLeft: this.previousTab,
+      ArrowRight: this.nextTab,
+      Home: this.firstTab,
+      End: this.lastTab,
+    }[code]
+
+    action?.()
   }
 
   bindEvents() {
