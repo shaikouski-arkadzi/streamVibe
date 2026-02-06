@@ -26,6 +26,11 @@ class Tabs {
     this.contentElements = [
       ...this.rootElement.querySelectorAll(this.selectors.content),
     ]
+    this.state = {
+      activeTabIndex: this.buttonElements.findIndex(
+        ({ ariaSelected }) => ariaSelected,
+      ),
+    }
   }
 }
 
