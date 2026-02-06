@@ -54,7 +54,7 @@ class Tabs {
   }
 
   onKeyDown = (event) => {
-    const { target, code } = event
+    const { target, code, metaKey } = event
     const isTabsContentFocused = this.contentElements.some(
       (contentElement) => contentElement === target,
     )
@@ -72,6 +72,20 @@ class Tabs {
       Home: this.firstTab,
       End: this.lastTab,
     }[code]
+
+    const isMacHomeKey = metaKey && code === "ArrowLeft"
+
+    if (isMacHomeKey) {
+      this.firstTab()
+      return
+    }
+
+    const isMacEndKey = metaKey && code === "ArrowRight"
+
+    if (isMacEndKey) {
+      this.lastTab()
+      return
+    }
 
     action?.()
   }
