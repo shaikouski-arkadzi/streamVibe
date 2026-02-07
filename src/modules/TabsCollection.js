@@ -31,6 +31,7 @@ class Tabs {
         ({ ariaSelected }) => ariaSelected,
       ),
     }
+    this.limitTabsIndex = this.buttonElements.length - 1
     this.bindEvents()
   }
 
@@ -46,6 +47,38 @@ class Tabs {
       const isActive = index === activeTabIndex
       contentElement.classList.toggle(this.stateClasses.isActive, isActive)
     })
+  }
+
+  activateTab(newTabIndex) {
+    this.state.activeTabIndex = newTabIndex
+    this.updateUI()
+    this.buttonElements[newTabIndex].focus()
+  }
+
+  previousTab = () => {
+    const newTabIndex =
+      this.state.activeTabIndex === 0
+        ? this.limitTabsIndex
+        : this.state.activeTabIndex - 1
+
+    this.activateTab(newTabIndex)
+  }
+
+  nextTab = () => {
+    const newTabIndex =
+      this.state.activeTabIndex === this.limitTabsIndex
+        ? 0
+        : this.state.activeTabIndex + 1
+
+    this.activateTab(newTabIndex)
+  }
+
+  firstTab = () => {
+    this.activateTab(0)
+  }
+
+  lastTab = () => {
+    this.activateTab(this.limitTabsIndex)
   }
 
   onButtonClick(buttonIndex) {
@@ -76,6 +109,7 @@ class Tabs {
     const isMacHomeKey = metaKey && code === "ArrowLeft"
 
     if (isMacHomeKey) {
+      event.preventDefault()
       this.firstTab()
       return
     }
@@ -83,11 +117,15 @@ class Tabs {
     const isMacEndKey = metaKey && code === "ArrowRight"
 
     if (isMacEndKey) {
+      event.preventDefault()
       this.lastTab()
       return
     }
 
-    action?.()
+    if (action) {
+      event.preventDefault()
+      action()
+    }
   }
 
   bindEvents() {
