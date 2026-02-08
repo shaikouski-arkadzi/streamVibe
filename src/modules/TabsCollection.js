@@ -39,7 +39,7 @@ class Tabs {
     }
     this.limitTabsIndex = this.buttonElements.length - 1
     this.bindEvents()
-    this.bindObservers()
+    setTimeout(this.bindObservers, 500)
   }
 
   updateUI() {
