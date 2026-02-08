@@ -1,4 +1,5 @@
 import getParams from "@/utils/getParams"
+import pxToRem from "@/utils/pxToRem"
 
 const rootSelector = "[data-js-tabs]"
 
@@ -12,6 +13,11 @@ class Tabs {
 
   stateClasses = {
     isActive: "is-active",
+  }
+
+  stateCSSVariables = {
+    activeButtonWidth: "--tabsActiveButtonWidth",
+    activeButtonOffsetLeft: "--tabsActiveButtonOffsetLeft",
   }
 
   constructor(rootElement) {
@@ -42,11 +48,31 @@ class Tabs {
       buttonElement.classList.toggle(this.stateClasses.isActive, isActive)
       buttonElement.ariaSelected = isActive
       buttonElement.tabIndex = isActive ? 0 : -1
+
+      if (isActive) {
+        this.updateNavigationCSSVars(buttonElement)
+      }
     })
     this.contentElements.forEach((contentElement, index) => {
       const isActive = index === activeTabIndex
       contentElement.classList.toggle(this.stateClasses.isActive, isActive)
     })
+  }
+
+  updateNavigationCSSVars(activeButtonElement) {
+    const { width, left } = activeButtonElement.getBoundingClientRect()
+    const offsetLeft =
+      left - this.navigationElement.getBoundingClientRect().left
+
+    this.navigationElement.style.setProperty(
+      this.stateCSSVariables.activeButtonWidth,
+      `${pxToRem(width)}rem`,
+    )
+
+    this.navigationElement.style.setProperty(
+      this.stateCSSVariables.activeButtonOffsetLeft,
+      `${pxToRem(offsetLeft)}rem`,
+    )
   }
 
   activateTab(newTabIndex) {
