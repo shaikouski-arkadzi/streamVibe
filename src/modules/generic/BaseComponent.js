@@ -18,10 +18,10 @@ class BaseComponent {
         target[prop] = newValue
 
         if (newValue !== oldValue) {
-          this.updateUI
+          this.updateUI()
         }
 
-        return
+        return true
       },
     })
   }
