@@ -1,0 +1,38 @@
+.banner {
+  padding-block: var(--section-padding-y);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 100px;
+    padding: fluid(100, 50) fluid(80, 30);
+    background:
+      linear-gradient(
+        90deg,
+        var(--color-black-06) 2.42%,
+        #140f0ff7 25.46%,
+        #220e0ee8 46.72%,
+        #e5000000 168.98%
+      ),
+      url("../../assets/images/banner/bg.png") center / cover no-repeat;
+    border: var(--border);
+    border-radius: var(--border-radius-l);
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: 50px;
+      text-align: center;
+    }
+
+    @include mobile {
+      background: url("../../assets/images/banner/bg_mobile.png") center / cover
+        no-repeat;
+    }
+  }
+
+  &__body {
+    display: grid;
+    row-gap: fluid-to-laptop(14, 10);
+  }
+}
