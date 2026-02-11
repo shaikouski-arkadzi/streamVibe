@@ -1,7 +1,16 @@
+import cn from "classnames"
 import "./Content.scss"
 
-const Content = ({ children }) => {
-  return <main className="content">{children}</main>
+const Content = ({ children, isResetPaddingTop = false }) => {
+  return (
+    <main
+      className={cn("content", {
+        "content--reset-padding-top": isResetPaddingTop,
+      })}
+    >
+      {children}
+    </main>
+  )
 }
 
 export default Content

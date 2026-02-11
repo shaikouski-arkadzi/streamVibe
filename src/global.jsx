@@ -30,7 +30,7 @@ export default function ({ children, title, url, isHeaderFixed }) {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <Header url={url} isFixed={isHeaderFixed} />
-      <Content>{children}</Content>
+      <Content isResetPaddingTop={isHeaderFixed}>{children}</Content>
       <Footer />
     </>
   )
