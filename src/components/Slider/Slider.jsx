@@ -40,6 +40,10 @@ const Slider = ({
   sliderParams = defaultSliderParams,
   isBeyondTheViewportOnMobileS,
   hasScrollbar = true,
+  /**
+   * ''(default) | 'abs-bottom'
+   */
+  navigationPosition = "",
 }) => {
   return (
     <div
@@ -61,7 +65,10 @@ const Slider = ({
         </ul>
       </div>
       {!navigationTargetElementId && (
-        <SliderNavigation className="slider__navigation" />
+        <SliderNavigation
+          className="slider__navigation"
+          position={navigationPosition}
+        />
       )}
       {hasScrollbar && (
         <div

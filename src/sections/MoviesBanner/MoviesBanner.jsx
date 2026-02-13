@@ -41,6 +41,7 @@ const MoviesBanner = () => {
         sliderParams={{
           slidesPerView: 1,
         }}
+        navigationPosition="abs-bottom"
       >
         {movieCards.map((movieCard) => (
           <MovieBannerCard {...movieCard} key={movieCard.title} />
