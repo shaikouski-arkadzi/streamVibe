@@ -42,6 +42,7 @@ const MoviesBanner = () => {
           slidesPerView: 1,
         }}
         navigationPosition="abs-bottom"
+        hasScrollbarOnMobile={false}
       >
         {movieCards.map((movieCard) => (
           <MovieBannerCard {...movieCard} key={movieCard.title} />
