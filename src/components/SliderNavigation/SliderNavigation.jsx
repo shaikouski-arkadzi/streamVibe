@@ -10,11 +10,16 @@ const SliderNavigation = ({
    * ''(default) | 'tile'
    */
   mode = "",
+  /**
+   * ''(default) | 'abs-bottom'
+   */
+  position = "",
 }) => {
   return (
     <div
       className={cn(className, "slider-navigation", {
         [`slider-navigation--${mode}`]: mode,
+        [`slider-navigation--${position}`]: position,
       })}
       id={id}
       data-js-slider-navigation=""
