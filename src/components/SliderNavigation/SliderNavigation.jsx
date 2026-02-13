@@ -14,12 +14,14 @@ const SliderNavigation = ({
    * ''(default) | 'abs-bottom'
    */
   position = "",
+  isHiddenMobile,
 }) => {
   return (
     <div
       className={cn(className, "slider-navigation", {
         [`slider-navigation--${mode}`]: mode,
         [`slider-navigation--${position}`]: position,
+        "hidden-mobile": isHiddenMobile,
       })}
       id={id}
       data-js-slider-navigation=""

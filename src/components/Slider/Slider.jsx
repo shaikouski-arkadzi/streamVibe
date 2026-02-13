@@ -44,6 +44,7 @@ const Slider = ({
    * ''(default) | 'abs-bottom'
    */
   navigationPosition = "",
+  isNavigationHiddenMobile = true,
 }) => {
   return (
     <div
@@ -68,6 +69,7 @@ const Slider = ({
         <SliderNavigation
           className="slider__navigation"
           position={navigationPosition}
+          isHiddenMobile={isNavigationHiddenMobile}
         />
       )}
       {hasScrollbar && (
