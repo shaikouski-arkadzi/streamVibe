@@ -8,10 +8,13 @@ const Tabs = ({
   title,
   items = [],
   navigationTargetElementId = null,
+  isEnableOnlyOnMobile = false,
 }) => {
   return (
     <div
-      className={cn(className, "tabs")}
+      className={cn(className, "tabs", {
+        "tabs--enable-only-on-mobile": isEnableOnlyOnMobile,
+      })}
       data-js-tabs={JSON.stringify({ navigationTargetElementId })}
     >
       {!navigationTargetElementId && (
