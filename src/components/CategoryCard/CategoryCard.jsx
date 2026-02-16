@@ -1,9 +1,9 @@
-import cn from "classnames"
 import { Image } from "minista"
-import "./CategoryCard.scss"
 import Icon from "@/components/Icon"
+import Badge from "@/components/Badge"
+import "./CategoryCard.scss"
 
-const CategoryCard = ({ title, images = [] }) => {
+const CategoryCard = ({ title, images = [], badge }) => {
   return (
     <a href="/movies" className="category-card">
       <div className="category-card__images">
@@ -12,7 +12,14 @@ const CategoryCard = ({ title, images = [] }) => {
         ))}
       </div>
       <div className="category-card__body">
-        <h3 className="category-card__title">{title}</h3>
+        <h3 className="category-card__title">
+          {badge && (
+            <Badge className="category-card__badge" mode="accent" isBig>
+              {badge}
+            </Badge>
+          )}
+          <span>{title}</span>
+        </h3>
         <Icon className="category-card__icon" name="arrow-right" />
       </div>
     </a>
