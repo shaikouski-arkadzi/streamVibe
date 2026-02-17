@@ -1,4 +1,5 @@
 import cn from "classnames"
+import Icon from "@/components/Icon"
 import "./Badge.scss"
 
 const Badge = ({
@@ -7,6 +8,9 @@ const Badge = ({
   mode = "",
   isBig = false,
   children,
+  iconName,
+  hasFillIcon,
+  iconAriaLabel,
 }) => {
   return (
     <div
@@ -15,7 +19,15 @@ const Badge = ({
         "badge--big": isBig,
       })}
     >
-      {children}
+      {iconName && (
+        <Icon
+          className="badge__icon"
+          name={iconName}
+          hasFill={hasFillIcon}
+          ariaLabel={iconAriaLabel}
+        />
+      )}
+      <span>{children}</span>
     </div>
   )
 }
