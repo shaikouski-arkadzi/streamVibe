@@ -8,7 +8,11 @@ const MovieCard = ({ title, imgSrc, duration, views, href = "/movie" }) => {
       <h3 className="visually-hidden">{title}</h3>
       <Image src={imgSrc} className="movie-card__image" />
       <div className="movie-card__body">
-        {duration && <Badge>{duration}</Badge>}
+        {duration && (
+          <Badge iconName="clock" iconAriaLabel="Duration" hasFillIcon>
+            {duration}
+          </Badge>
+        )}
       </div>
     </a>
   )
