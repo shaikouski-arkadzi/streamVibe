@@ -2,6 +2,7 @@ import Tabs from "@/components/Tabs"
 import SliderNavigation from "@/components/SliderNavigation"
 import Slider from "@/components/Slider"
 import CategoryCard from "@/components/CategoryCard"
+import MovieCard from "@/components/MovieCard"
 import Section from "@/layouts/Section"
 import getIdFromTitle from "@/utils/getIdFromTitle"
 import collectionGroups from "./collectionGroups"
@@ -22,7 +23,7 @@ const Collections = () => {
               {collectionGroup.title}
             </p>
             {collectionGroup.items.map(
-              ({ title, categoryItems, sliderParams }) => {
+              ({ title, categoryItems, sliderParams, movieItems }) => {
                 const titleFormatted = `${getIdFromTitle(collectionGroup.title)}-${getIdFromTitle(title)}`
                 const titleId = `${titleFormatted}-title`
                 const sliderNavigationId = `${titleFormatted}-slider-navigation`
@@ -43,12 +44,15 @@ const Collections = () => {
                       navigationTargetElementId={sliderNavigationId}
                       isBeyondTheViewportOnMobileS
                     >
-                      {categoryItems.map((categoryItem) => (
+                      {categoryItems?.map((categoryItem) => (
                         <CategoryCard
                           {...categoryItem}
                           key={categoryItem.title}
                         />
-                      ))}
+                      )) ??
+                        movieItems?.map((movieItem) => (
+                          <MovieCard {...movieItem} key={movieItem.title} />
+                        ))}
                     </Slider>
                   </Section>
                 )
