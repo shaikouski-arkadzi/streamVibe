@@ -13,6 +13,11 @@ const MovieCard = ({ title, imgSrc, duration, views, href = "/movie" }) => {
             {duration}
           </Badge>
         )}
+        {views && (
+          <Badge iconName="eye" iconAriaLabel="Views" hasFillIcon>
+            {views}
+          </Badge>
+        )}
       </div>
     </a>
   )
