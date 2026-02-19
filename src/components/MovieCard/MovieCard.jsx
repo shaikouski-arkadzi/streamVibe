@@ -10,6 +10,7 @@ const MovieCard = ({
   views,
   released,
   rating,
+  season,
   href = "/movie",
 }) => {
   return (
@@ -20,6 +21,12 @@ const MovieCard = ({
         {duration && (
           <Badge iconName="clock" iconAriaLabel="Duration" hasFillIcon>
             {duration}
+          </Badge>
+        )}
+
+        {season && (
+          <Badge iconName="catalog" hasFillIcon>
+            {season}
           </Badge>
         )}
 
