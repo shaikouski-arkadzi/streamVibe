@@ -1,3 +1,4 @@
+import cn from "classnames"
 import { Image } from "minista"
 import Button from "@/components/Button"
 import "./MovieBannerCard.scss"
@@ -8,11 +9,16 @@ const MovieBannerCard = ({
   TitleHTag = "h2",
   description,
   imgSrc,
+  isSmallPaddingY = false,
 }) => {
   return (
     <div className="movie-banner-card">
       <Image className="movie-banner-card__image" src={imgSrc} />
-      <div className="movie-banner-card__inner">
+      <div
+        className={cn("movie-banner-card__inner", {
+          "movie-banner-card__inner--small-padding-y": isSmallPaddingY,
+        })}
+      >
         <div className="movie-banner-card__body">
           <TitleHTag className="movie-banner-card__title h3" id={titleId}>
             {title}
