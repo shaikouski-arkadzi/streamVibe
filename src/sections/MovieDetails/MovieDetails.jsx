@@ -6,6 +6,49 @@ const MovieDetails = () => {
   const titleId = "movie-details-title"
   const castSliderNavigationId = "movie-cast-slider-navigation"
 
+  const castItems = [
+    {
+      imgSrc: "/src/assets/images/people/cast.jpg",
+      imgAlt: "Ivan Ivanov",
+    },
+    {
+      imgSrc: "/src/assets/images/people/cast.jpg",
+      imgAlt: "Ivan Ivanov",
+    },
+    {
+      imgSrc: "/src/assets/images/people/cast.jpg",
+      imgAlt: "Ivan Ivanov",
+    },
+    {
+      imgSrc: "/src/assets/images/people/cast.jpg",
+      imgAlt: "Ivan Ivanov",
+    },
+    {
+      imgSrc: "/src/assets/images/people/cast.jpg",
+      imgAlt: "Ivan Ivanov",
+    },
+    {
+      imgSrc: "/src/assets/images/people/cast.jpg",
+      imgAlt: "Ivan Ivanov",
+    },
+    {
+      imgSrc: "/src/assets/images/people/cast.jpg",
+      imgAlt: "Ivan Ivanov",
+    },
+    {
+      imgSrc: "/src/assets/images/people/cast.jpg",
+      imgAlt: "Ivan Ivanov",
+    },
+    {
+      imgSrc: "/src/assets/images/people/cast.jpg",
+      imgAlt: "Ivan Ivanov",
+    },
+    {
+      imgSrc: "/src/assets/images/people/cast.jpg",
+      imgAlt: "Ivan Ivanov",
+    },
+  ]
+
   return (
     <section className="movie-details container" aria-labelledby={titleId}>
       <h2 className="visually-hidden" id={titleId}>
