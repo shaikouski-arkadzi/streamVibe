@@ -29,6 +29,8 @@ const MovieDetails = () => {
             <SliderNavigation
               id={castSliderNavigationId}
               hasPagination={false}
+              mode="rounded"
+              buttonMode="black-08"
             />
           </header>
         </div>
