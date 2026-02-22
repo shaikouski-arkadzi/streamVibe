@@ -1,4 +1,5 @@
 import SliderNavigation from "@/components/SliderNavigation"
+import Slider from "@/components/Slider"
 import "./MovieDetails.scss"
 
 const MovieDetails = () => {
@@ -33,6 +34,23 @@ const MovieDetails = () => {
               buttonMode="black-08"
             />
           </header>
+          <Slider
+            navigationTargetElementId={castSliderNavigationId}
+            hasScrollbarOnMobile={false}
+            sliderParams={{
+              slidesPerView: "auto",
+              spaceBetween: 10,
+              breakpoints: {
+                1024: {
+                  slidesPerView: "auto",
+                  spaceBetween: 20,
+                  allowTouchMove: false,
+                },
+              },
+            }}
+          >
+            {[]}
+          </Slider>
         </div>
         <div className="movie-details__panel"></div>
       </div>
