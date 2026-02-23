@@ -7,6 +7,10 @@
     }
   }
 
+  &__item {
+    width: auto;
+  }
+
   &__scrollbar {
     @include abs-x;
 
