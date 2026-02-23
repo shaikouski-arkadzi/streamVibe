@@ -1,5 +1,6 @@
 import SliderNavigation from "@/components/SliderNavigation"
 import Slider from "@/components/Slider"
+import PersonCard from "@/components/PersonCard"
 import "./MovieDetails.scss"
 
 const MovieDetails = () => {
@@ -92,7 +93,9 @@ const MovieDetails = () => {
               },
             }}
           >
-            {[]}
+            {castItems.map((castItem) => (
+              <PersonCard {...castItem} key={castItem.imgAlt} />
+            ))}
           </Slider>
         </div>
         <div className="movie-details__panel"></div>
