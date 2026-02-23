@@ -44,6 +44,7 @@ const Slider = ({
    * ''(default) | 'abs-bottom'
    */
   navigationPosition = "",
+  navigationMode,
   isNavigationHiddenMobile = true,
 }) => {
   return (
@@ -69,6 +70,7 @@ const Slider = ({
         <SliderNavigation
           className="slider__navigation"
           position={navigationPosition}
+          mode={navigationMode}
           isHiddenMobile={isNavigationHiddenMobile}
         />
       )}
