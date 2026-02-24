@@ -5,6 +5,7 @@ import Button from "@/components/Button"
 import ReviewCard from "@/components/ReviewCard"
 import Icon from "@/components/Icon"
 import Tags from "@/components/Tags"
+import Ratings from "@/components/Ratings"
 import "./MovieDetails.scss"
 
 const MovieDetails = () => {
@@ -220,6 +221,24 @@ const MovieDetails = () => {
               </h3>
               <Tags
                 items={["English", "Hindi", "Tamil", "Telegu", "Kannada"]}
+              />
+            </div>
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">
+                <Icon name="star" />
+                <span>Ratings</span>
+              </h3>
+              <Ratings
+                items={[
+                  {
+                    title: "IMDb",
+                    ratingValue: 4.5,
+                  },
+                  {
+                    title: "Streamvibe",
+                    ratingValue: 4,
+                  },
+                ]}
               />
             </div>
           </div>
