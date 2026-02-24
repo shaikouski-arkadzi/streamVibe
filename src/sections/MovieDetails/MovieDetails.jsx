@@ -241,6 +241,13 @@ const MovieDetails = () => {
                 ]}
               />
             </div>
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">
+                <Icon name="gernes" />
+                <span>Gernes</span>
+              </h3>
+              <Tags items={["Action", "Adventure"]} />
+            </div>
           </div>
         </div>
       </aside>
