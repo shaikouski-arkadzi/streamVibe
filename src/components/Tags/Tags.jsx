@@ -1,4 +1,4 @@
-import "./Badge.scss"
+import "./Tags.scss"
 
 const Tags = ({ items = [] }) => {
   return (

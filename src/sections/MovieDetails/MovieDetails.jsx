@@ -4,6 +4,7 @@ import PersonCard from "@/components/PersonCard"
 import Button from "@/components/Button"
 import ReviewCard from "@/components/ReviewCard"
 import Icon from "@/components/Icon"
+import Tags from "@/components/Tags"
 import "./MovieDetails.scss"
 
 const MovieDetails = () => {
@@ -211,6 +212,15 @@ const MovieDetails = () => {
                   2022
                 </time>
               </div>
+            </div>
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">
+                <Icon name="translate" />
+                <span>Available Languages</span>
+              </h3>
+              <Tags
+                items={["English", "Hindi", "Tamil", "Telegu", "Kannada"]}
+              />
             </div>
           </div>
         </div>
