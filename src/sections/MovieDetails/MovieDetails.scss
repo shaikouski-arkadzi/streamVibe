@@ -22,6 +22,10 @@
       border-radius: var(--border-radius-m);
     }
 
+    &--large-gap-y {
+      row-gap: fluid(40, 24);
+    }
+
     &-header {
       display: flex;
       justify-content: space-between;

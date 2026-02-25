@@ -162,7 +162,7 @@ const MovieDetails = () => {
             ))}
           </Slider>
         </div>
-        <div className="movie-details__panel">
+        <div className="movie-details__panel movie-details__panel--large-gap-y">
           <header className="movie-details__panel-header">
             <h3 className="movie-details__title">Reviews</h3>
             <Button
@@ -243,7 +243,7 @@ const MovieDetails = () => {
             </div>
             <div className="movie-details__group">
               <h3 className="movie-details__title">
-                <Icon name="gernes" />
+                <Icon name="genres" />
                 <span>Gernes</span>
               </h3>
               <Tags items={["Action", "Adventure"]} />
