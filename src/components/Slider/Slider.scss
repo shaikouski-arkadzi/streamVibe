@@ -11,6 +11,14 @@
     width: auto;
   }
 
+  &__navigation {
+    margin-top: fluid(40, 24);
+
+    &.slider-navigation {
+      justify-content: center;
+    }
+  }
+
   &__scrollbar {
     @include abs-x;
 
