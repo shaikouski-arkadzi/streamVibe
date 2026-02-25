@@ -1,0 +1,59 @@
+.movie-details {
+  display: grid;
+  grid-template-columns: 1fr 32.5%;
+  column-gap: 20px;
+  padding-top: fluid(100, 60);
+  padding-bottom: var(--section-padding-y);
+
+  &__main {
+    display: grid;
+    row-gap: fluid-to-laptop(30, 20);
+  }
+
+  &__panel {
+    display: grid;
+    row-gap: fluid(30, 16);
+    padding: fluid(50, 24);
+    background-color: var(--color-black-10);
+    border: var(--border);
+    border-radius: var(--border-radius-l);
+
+    @include laptop {
+      border-radius: var(--border-radius-m);
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 10px;
+    }
+  }
+
+  &__groups {
+    display: grid;
+    row-gap: fluid(30, 20);
+  }
+
+  &__group {
+    display: grid;
+    row-gap: fluid-to-laptop(14, 10);
+  }
+
+  &__title,
+  &__description {
+    font-weight: 500;
+  }
+
+  &__title {
+    font-size: fluid(18, 14);
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    color: inherit;
+  }
+
+  &__description {
+    color: var(--color-white);
+  }
+}
