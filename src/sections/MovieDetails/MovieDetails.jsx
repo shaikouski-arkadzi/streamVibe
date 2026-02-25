@@ -248,6 +248,22 @@ const MovieDetails = () => {
               </h3>
               <Tags items={["Action", "Adventure"]} />
             </div>
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">Director</h3>
+              <PersonCard
+                name="Rishab Shetty"
+                subtitle="From India"
+                imgSrc="/src/assets/images/people/director.jpg"
+              />
+            </div>
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">Music</h3>
+              <PersonCard
+                name="B. Ajaneesh Loknath"
+                subtitle="From India"
+                imgSrc="/src/assets/images/people/music.jpg"
+              />
+            </div>
           </div>
         </div>
       </aside>
