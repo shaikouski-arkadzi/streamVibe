@@ -8,7 +8,7 @@ import Tags from "@/components/Tags"
 import Ratings from "@/components/Ratings"
 import "./MovieDetails.scss"
 
-const MovieDetails = () => {
+const MovieDetails = ({ seasons }) => {
   const titleId = "movie-details-title"
   const castSliderNavigationId = "movie-cast-slider-navigation"
 
@@ -120,6 +120,14 @@ const MovieDetails = () => {
         Detailed movie information
       </h2>
       <div className="movie-details__main">
+        {seasons && (
+          <div className="movie-details__panel">
+            <div className="movie-details__group">
+              <h3 className="h4">Seasons and Episodes</h3>
+              {seasons}
+            </div>
+          </div>
+        )}
         <div className="movie-details__panel movie-details__panel--description">
           <div className="movie-details__group">
             <h3 className="movie-details__title">Description</h3>
