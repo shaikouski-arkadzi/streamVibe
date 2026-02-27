@@ -2,6 +2,7 @@ import cn from "classnames"
 import "./AccordionGroup.scss"
 
 const AccordionGroup = ({
+  className,
   /**
    * '' (default) | 'dark'
    */
@@ -15,7 +16,7 @@ const AccordionGroup = ({
 
   return (
     <ListTag
-      className={cn("accordion-group", {
+      className={cn(className, "accordion-group", {
         [`accordion-group--${columns}-columns`]: columns > 1,
         "accordion-group--has-counter": isOrderedList,
         [`accordion-group--${mode}`]: mode,
