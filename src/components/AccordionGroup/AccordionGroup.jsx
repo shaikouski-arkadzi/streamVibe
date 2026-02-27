@@ -1,7 +1,15 @@
 import cn from "classnames"
 import "./AccordionGroup.scss"
 
-const AccordionGroup = ({ columns = 1, children, isOrderedList = true }) => {
+const AccordionGroup = ({
+  /**
+   * '' (default) | 'dark'
+   */
+  mode = "",
+  columns = 1,
+  children,
+  isOrderedList = true,
+}) => {
   const itemsPerColumn = Math.ceil(children.length / columns)
   const ListTag = isOrderedList ? "ol" : "ul"
 
@@ -10,6 +18,7 @@ const AccordionGroup = ({ columns = 1, children, isOrderedList = true }) => {
       className={cn("accordion-group", {
         [`accordion-group--${columns}-columns`]: columns > 1,
         "accordion-group--has-counter": isOrderedList,
+        [`accordion-group--${mode}`]: mode,
       })}
     >
       {children.map((child, index) => (
