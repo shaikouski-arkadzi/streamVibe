@@ -24,7 +24,7 @@ const EpisodeCard = ({ number, title, description, duration, video }) => {
         </button>
       </div>
       <div className="episode-card__body">
-        <div className="episode-card__indo">
+        <div className="episode-card__info">
           <h4 className="episode-card__title h6">{title}</h4>
           <div className="episode-card__duration">
             <Icon name="clock_stroke" ariaLabel="Duration" />
