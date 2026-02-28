@@ -34,6 +34,16 @@
     @include mobile {
       grid-area: player;
     }
+
+    &::before {
+      @include abs-cover;
+      content: "";
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+    }
   }
 
   &__video {
