@@ -12,6 +12,7 @@ const Field = ({
   type,
   placeholder,
   isRequired,
+  inputMode,
 }) => {
   const fieldId = id ?? getIdFromTitle(label)
 
@@ -34,6 +35,7 @@ const Field = ({
           type={type}
           placeholder={placeholder}
           required={isRequired}
+          inputMode={inputMode}
         />
       </div>
     </div>
