@@ -19,10 +19,10 @@ const Field = ({
 
   const Component = type === "textarea" ? "textarea" : "input"
 
-  const extraAttrs = {
-    if(mask) {
-      extraAttrs["data-js-input-mask"] = mask
-    },
+  const extraAttrs = {}
+
+  if (mask) {
+    extraAttrs["data-js-input-mask"] = mask
   }
 
   return (
