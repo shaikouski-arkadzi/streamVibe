@@ -30,6 +30,13 @@
       border-color: var(--color-red-45);
     }
 
+    &:disabled {
+      &,
+      & + .checkbox__label {
+        @include disabled;
+      }
+    }
+
     &::after {
       content: "✔";
       color: var(--color-white);
