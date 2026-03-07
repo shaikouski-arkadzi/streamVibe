@@ -3,13 +3,13 @@ import getIdFromTitle from "@/utils/getIdFromTitle"
 import "./Checkbox.scss"
 
 const Checkbox = ({ className, id, label, isRequired }) => {
-  const fieldId = id ?? getIdFromTitle(label)
+  const checkboxId = id ?? getIdFromTitle(label)
 
   return (
-    <label className={cn(className, "checkbox")} htmlFor={fieldId}>
+    <label className={cn(className, "checkbox")} htmlFor={checkboxId}>
       <input
         className="checkbox__input"
-        id={fieldId}
+        id={checkboxId}
         type="checkbox"
         required={isRequired}
       />
