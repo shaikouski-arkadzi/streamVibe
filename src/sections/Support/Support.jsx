@@ -52,7 +52,7 @@ const Support = () => {
           placeholder="(999) 999-99-99"
           inputMode="tel"
           mask="(000) 000-00-00"
-          before={
+          renderBefore={(buttonClassName) => (
             <Select
               label="Phone number prefix"
               options={[
@@ -61,8 +61,9 @@ const Support = () => {
                 { value: "+2" },
                 { value: "+3" },
               ]}
+              buttonClassName={buttonClassName}
             />
-          }
+          )}
         />
         <Field
           className="support__form-cell support__form-cell--wide"
