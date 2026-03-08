@@ -14,6 +14,7 @@ const Field = ({
   isRequired,
   inputMode,
   mask,
+  before,
 }) => {
   const fieldId = id ?? getIdFromTitle(label)
 
@@ -36,6 +37,7 @@ const Field = ({
         )}
       </label>
       <div className="field__body">
+        {before}
         <Component
           className="field__control"
           id={fieldId}
