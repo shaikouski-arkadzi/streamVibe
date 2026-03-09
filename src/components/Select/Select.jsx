@@ -13,6 +13,7 @@ const Select = ({
    * }>
    */
   options = [],
+  buttonClassName,
 }) => {
   const selectId = id ?? getIdFromTitle(label)
 
@@ -37,7 +38,7 @@ const Select = ({
         {label}
       </label>
       <select
-        className="select__original-control"
+        className={cn("select__original-control", buttonClassName)}
         id={IDs.originalControl}
         tabIndex={-1}
         data-js-select-orginal-control=""
@@ -51,7 +52,7 @@ const Select = ({
       </select>
       <div className="select__body">
         <div
-          className="select__button"
+          className={cn("select__button", buttonClassName)}
           role="combobox"
           aria-expanded={false}
           aria-haspopup="listbox"
