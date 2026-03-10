@@ -1,4 +1,5 @@
-const { default: BaseComponent } = require("./generic/BaseComponent")
+import BaseComponent from "@/modules/generic/BaseComponent"
+import MatchMedia from "@/constants/MatchMedia"
 
 const rootSelector = "[data-js-select]"
 
@@ -47,6 +48,8 @@ class Select extends BaseComponent {
         this.optionElements[this.originalControlElement.selectedIndex],
     })
     setTimeout(this.fixDropdownPosition, 500)
+    this.updateTabIndexes()
+    this.bindEvents()
   }
 
   updateUI() {
@@ -113,6 +116,19 @@ class Select extends BaseComponent {
       this.stateClasses.isOnTheRightSide,
       !isButtonOnTheLeftViewportSide,
     )
+  }
+
+  updateTabIndexes(isMobileDevice = MatchMedia.mobile.matches) {
+    this.originalControlElement.tabIndex = isMobileDevice ? 0 : -1
+    this.buttonElement.tabIndex = isMobileDevice ? -1 : 0
+  }
+
+  onMobileMatchMediaChange = (event) => {
+    this.updateTabIndexes(event.matches)
+  }
+
+  bindEvents() {
+    MatchMedia.mobile.addEventListener("change", this.onMobileMatchMediaChange)
   }
 }
 
