@@ -46,6 +46,7 @@ class Select extends BaseComponent {
       selectedOptionElement:
         this.optionElements[this.originalControlElement.selectedIndex],
     })
+    setTimeout(this.fixDropdownPosition, 500)
   }
 
   updateUI() {
@@ -95,6 +96,23 @@ class Select extends BaseComponent {
     updateButton()
     updateDropdown()
     updateOptions()
+  }
+
+  fixDropdownPosition = () => {
+    const viewportWidth = document.documentElement.clientWidth
+    const viewportCenterX = viewportWidth / 2
+    const { width, x } = this.buttonElement.getBouningClientRect()
+    const buttonCenterX = x + width / 2
+    const isButtonOnTheLeftViewportSide = buttonCenterX < viewportCenterX
+
+    this.dropdownElement.classList.toggle(
+      this.stateClasses.isOnTheLeftSide,
+      isButtonOnTheLeftViewportSide,
+    )
+    this.dropdownElement.classList.toggle(
+      this.stateClasses.isOnTheRightSide,
+      !isButtonOnTheLeftViewportSide,
+    )
   }
 }
 
