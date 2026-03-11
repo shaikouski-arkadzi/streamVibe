@@ -104,7 +104,7 @@ class Select extends BaseComponent {
   fixDropdownPosition = () => {
     const viewportWidth = document.documentElement.clientWidth
     const viewportCenterX = viewportWidth / 2
-    const { width, x } = this.buttonElement.getBouningClientRect()
+    const { width, x } = this.buttonElement.getBoundingClientRect()
     const buttonCenterX = x + width / 2
     const isButtonOnTheLeftViewportSide = buttonCenterX < viewportCenterX
 

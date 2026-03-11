@@ -41,7 +41,7 @@ const Select = ({
         className={cn("select__original-control", buttonClassName)}
         id={IDs.originalControl}
         tabIndex={-1}
-        data-js-select-orginal-control=""
+        data-js-select-original-control=""
         defaultValue={selectedOption.value}
       >
         {options.map(({ value }) => (
