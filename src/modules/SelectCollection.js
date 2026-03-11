@@ -133,12 +133,29 @@ class Select extends BaseComponent {
       this.optionElements[this.originalControlElement.selectedIndex]
   }
 
+  onButtonClick = () => {
+    this.toggleExpandedState()
+  }
+
+  toggleExpandedState() {
+    this.state.isExpanded = !this.state.isExpanded
+  }
+
+  expand() {
+    this.state.isExpanded = true
+  }
+
+  collapse() {
+    this.state.isExpanded = false
+  }
+
   bindEvents() {
     MatchMedia.mobile.addEventListener("change", this.onMobileMatchMediaChange)
     this.originalControlElement.addEventListener(
       "change",
       this.onOriginalControlChange,
     )
+    this.buttonElement.addEventListener("click", this.onButtonClick)
   }
 }
 
