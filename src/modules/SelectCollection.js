@@ -181,6 +181,69 @@ class Select extends BaseComponent {
     }
   }
 
+  onArrowUpKey = () => {
+    if (this.isNeedToExpand()) {
+      this.expand()
+      return
+    }
+
+    if (this.state.currentOptionIndex > 0) {
+      this.state.currentOptionIndex--
+    }
+  }
+
+  onArrowDownKey = () => {
+    if (this.isNeedToExpand()) {
+      this.expand()
+      return
+    }
+
+    if (this.state.currentOptionIndex < this.optionElements.length - 1) {
+      this.state.currentOptionIndex++
+    }
+  }
+
+  onSpaceKey = () => {
+    if (this.isNeedToExpand()) {
+      this.expand()
+      return
+    }
+
+    this.selectCurrentOption()
+    this.collapse()
+  }
+
+  onEnterKey = () => {
+    if (this.isNeedToExpand()) {
+      this.expand()
+      return
+    }
+
+    this.selectCurrentOption()
+    this.collapse()
+  }
+
+  onEscapeKey = () => {
+    this.collapse()
+  }
+
+  onKeyDown = (event) => {
+    const { code } = event
+
+    const action = {
+      ArrowUp: this.onArrowUpKey,
+      ArrowDown: this.onArrowDownKey,
+      Space: this.onSpaceKey,
+      Enter: this.onEnterKey,
+      Escape: this.onEscapeKey,
+    }[code]
+
+    if (action) {
+      event.preventDefault()
+      action()
+    }
+  }
+
   bindEvents() {
     MatchMedia.mobile.addEventListener("change", this.onMobileMatchMediaChange)
     this.originalControlElement.addEventListener(
@@ -189,6 +252,7 @@ class Select extends BaseComponent {
     )
     this.buttonElement.addEventListener("click", this.onButtonClick)
     document.addEventListener("click", this.onClick)
+    this.rootElement.addEventListener("keydown", this.onKeyDown)
   }
 }
 
