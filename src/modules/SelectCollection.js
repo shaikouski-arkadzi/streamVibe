@@ -154,6 +154,11 @@ class Select extends BaseComponent {
     return !this.state.isExpanded && isButtonFocused
   }
 
+  selectCurrentOption() {
+    this.state.selectedOptionElement =
+      this.optionElements[this.state.currentOptionIndex]
+  }
+
   onClick = (event) => {
     const { target } = event
     const isButtonClick = target === this.buttonElement
