@@ -1,5 +1,7 @@
 import Section from "@/layouts/Section"
 import Badge from "@/components/Badge"
+import Table from "@/components/Table"
+import { rows } from "./planTableRows"
 import "./PlansComparison.scss"
 
 const PlansComparison = () => {
@@ -34,7 +36,9 @@ const PlansComparison = () => {
       title="Compare our plans and find the right one for you"
       titleId="plans-comparison-title"
       description="StreamVibe offers three different plans to fit your needs: Basic, Standard, and Premium. Compare the features of each plan and choose the one that's right for you."
-    ></Section>
+    >
+      <Table headCells={headCells} rows={rows} />
+    </Section>
   )
 }
 
