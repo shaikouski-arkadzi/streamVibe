@@ -1,6 +1,6 @@
 import "./Table.scss"
 
-const Tabs = ({ className, headCells = [], rows = [] }) => {
+const Table = ({ className, headCells = [], rows = [] }) => {
   return (
     <table className={className}>
       {headCells.length > 0 && (
