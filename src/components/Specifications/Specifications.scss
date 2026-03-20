@@ -9,6 +9,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px 20px;
+    // браузер старается заполнить пустые ячейки в разметке, если размеры элементов позволяют
+    grid-auto-flow: dense;
   }
 
   &__item {
