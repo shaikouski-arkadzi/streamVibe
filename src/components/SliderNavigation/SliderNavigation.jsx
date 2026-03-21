@@ -16,6 +16,7 @@ const SliderNavigation = ({
   position = "",
   isHiddenMobile,
   buttonMode = "black-10",
+  justifyContent,
 }) => {
   return (
     <div
@@ -23,6 +24,7 @@ const SliderNavigation = ({
         [`slider-navigation--${mode}`]: mode,
         [`slider-navigation--${position}`]: position,
         "hidden-mobile": isHiddenMobile,
+        [`slider-navigation--${justifyContent}`]: justifyContent,
       })}
       id={id}
       data-js-slider-navigation=""
