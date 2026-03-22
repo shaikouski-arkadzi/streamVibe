@@ -31,7 +31,7 @@ const Accordion = ({
           </h3>
         </summary>
       </details>
-      <div className="accordion__content" id={id} role="defenition">
+      <div className="accordion__content" id={id} role="definition">
         <div className="accordion__content-inner">
           <div className="accordion__content-body">{children}</div>
         </div>
