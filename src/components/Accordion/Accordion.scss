@@ -63,7 +63,7 @@
       height: 2px;
       background-color: var(--color-white);
       border-radius: 10px;
-      transition-duration: var(--transition-duration);
+      transition-duration: var(--transition-duration-longer);
     }
 
     &::after {
@@ -86,7 +86,7 @@
     background-color: var(--color-black-08);
     border: var(--border);
     border-radius: 50%;
-    transition-duration: var(--transition-duration);
+    transition-duration: var(--transition-duration-longer);
   }
 
   &__content {
