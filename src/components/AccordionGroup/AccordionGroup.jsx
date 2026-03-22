@@ -26,7 +26,7 @@ const AccordionGroup = ({
         <li
           className={cn("accordion-group__item", {
             "accordion-group__item--last-column-item":
-              columns > 1 && itemsPerColumn / (index + 1) === 1,
+              columns > 1 && (index + 1) % itemsPerColumn === 0,
           })}
           key={index}
         >
