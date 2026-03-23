@@ -55,4 +55,6 @@
 
   --transition-duration: 0.2s;
   --transition-duration-longer: 0.4s;
+
+  --field-padding-x: #{fluid-to-laptop(20, 16)};
 }
