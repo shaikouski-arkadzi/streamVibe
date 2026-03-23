@@ -1,8 +1,11 @@
 table {
-  --tableBorder: var(--border);
+  --tableBorderWidth: var(--border-width-s);
+  --tableBorderColor: var(--color-black-15);
+  --tableBorder: var(--tableBorderWidth) solid var(--tableBorderColor);
 
   width: 100%;
-  border-collapse: separate;
+  box-shadow: 0 0 0 var(--tableBorderWidth) var(--tableBorderColor);
+  overflow: hidden;
   border: var(--tableBorder);
   border-radius: var(--border-radius-l);
 
