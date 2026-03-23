@@ -1,7 +1,7 @@
 import { Image } from "minista"
 import Badge from "@/components/Badge"
-import "./MovieCard.scss"
 import RatingView from "../RatingView"
+import "./MovieCard.scss"
 
 const MovieCard = ({
   title,
@@ -43,7 +43,7 @@ const MovieCard = ({
         )}
 
         {released && (
-          <Badge className="movie-card__released-badge">
+          <Badge isBig className="movie-card__released-badge">
             {`Released at `}
             <time
               className="movie-card__released-badge-label"
