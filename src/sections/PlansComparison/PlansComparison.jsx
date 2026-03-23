@@ -20,7 +20,7 @@ const PlansComparison = () => {
     {
       children: (
         <>
-          Standard <Badge mode="accent">Popular</Badge>
+          Standard&nbsp;&nbsp;<Badge mode="accent">Popular</Badge>
         </>
       ),
       width: "25%",
